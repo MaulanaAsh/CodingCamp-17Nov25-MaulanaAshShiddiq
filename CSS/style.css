@@ -123,20 +123,21 @@ a {
   font-size: 14px;
 }
 
-/* BANNER - RESPONSIVE 16:9 (HOME) */
+/* BANNER HOME - RESPONSIVE 16:9 */
 .banner-frame {
   border: 1px solid #999;
   width: 100%;
   max-width: 1366px;
   padding-top: 56.25%; /* rasio 16:9 */
   position: relative;
-  background-size: cover; /* <-- PERBAIKAN: cover bukan contain */
+  background-size: contain; /* <-- PENTING: gunakan contain */
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #273297;
+  background-color: #273297; /* fallback jika gambar tidak muat */
   margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
 /* OVERLAY TEKS */
@@ -315,13 +316,14 @@ a {
   max-width: 1100px;
   padding-top: 45%; /* rasio ~2.2:1 */
   position: relative;
-  background-size: cover; /* <-- PENTING: cover agar tidak terpotong */
+  background-size: contain; /* <-- GUNAKAN CONTAIN UNTUK PROFIL JUGA */
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #273297; /* fallback */
   margin: 12px auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden; /* <-- tambahkan ini agar tidak ada overflow */
+  overflow: hidden;
 }
 
 /* Jika Anda masih menggunakan <img> di profile.html, pastikan ini aktif */
@@ -329,7 +331,7 @@ a {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -482,8 +484,8 @@ a {
     width: 100%;
   }
 
-  /* Pastikan banner di mobile tidak terlalu tinggi */
+  /* Pastikan banner di mobile tidak terlalu kecil */
   .profile-banner-frame {
-    padding-top: 80%; /* lebih tinggi agar tidak terlalu sempit */
+    padding-top: 80%;
   }
 }

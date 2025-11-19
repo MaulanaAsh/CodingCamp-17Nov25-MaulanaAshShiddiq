@@ -130,11 +130,13 @@ a {
   max-width: 1366px;
   padding-top: 56.25%; /* rasio 16:9 */
   position: relative;
-  background-size: contain;
+  background-size: cover; /* <-- PERBAIKAN: cover bukan contain */
   background-position: center;
   background-repeat: no-repeat;
   background-color: #273297;
   margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* OVERLAY TEKS */
@@ -313,17 +315,23 @@ a {
   max-width: 1100px;
   padding-top: 45%; /* rasio ~2.2:1 */
   position: relative;
-  background-size: cover;
+  background-size: cover; /* <-- PENTING: cover agar tidak terpotong */
   background-position: center;
   background-repeat: no-repeat;
   margin: 12px auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* <-- tambahkan ini agar tidak ada overflow */
 }
 
-/* Sembunyikan <img> jika masih ada */
+/* Jika Anda masih menggunakan <img> di profile.html, pastikan ini aktif */
 .profile-banner {
-  display: none;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* =============== FOOTER =============== */
@@ -472,5 +480,10 @@ a {
   .preview-panel,
   .form-panel {
     width: 100%;
+  }
+
+  /* Pastikan banner di mobile tidak terlalu tinggi */
+  .profile-banner-frame {
+    padding-top: 80%; /* lebih tinggi agar tidak terlalu sempit */
   }
 }

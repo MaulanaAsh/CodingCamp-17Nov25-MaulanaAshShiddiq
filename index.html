@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Seven Art Design</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <!-- HEADER / NAV -->
+    <header class="header">
+      <div class="header-left">
+        <img src="Assets/logo_web.png" alt="logo" class="logo" />
+        <div class="site-url">www.sevenart.com</div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-btn active">Home</a>
+        <a href="profile.html" class="nav-btn">Our Profile</a>
+        <a href="#portfolio" class="nav-btn">Portfolio</a>
+        <a href="#message" class="nav-btn">Message Us</a>
+      </nav>
+    </header>
+
+    <!-- WELCOME / BANNER -->
+    <main class="main">
+      <section class="welcome">
+        <div class="welcome-header">
+          <h2 class="welcome-title">
+            Hi <span id="nameDisplay">Guest</span>, Welcome To Seven Art Design
+          </h2>
+          <p class="subtitle">Ini adalah website latihan pertama</p>
+        </div>
+
+        <div
+          class="banner-frame"
+          style="background-image: url('Assets/banner_web.png')"
+        ></div>
+      </section>
+
+      <!-- HEADQUARTER -->
+      <section class="hq">
+        <h3 class="section-title">Our Headquarter</h3>
+        <div class="hq-list">
+          <figure class="hq-item">
+            <div class="hq-circle">
+              <img src="Assets/logo_web.png" alt="Logo" />
+            </div>
+            <figcaption>Jakarta</figcaption>
+          </figure>
+          <figure class="hq-item">
+            <div class="hq-circle">
+              <img src="Assets/logo_web.png" alt="Logo" />
+            </div>
+            <figcaption>Bandung</figcaption>
+          </figure>
+          <figure class="hq-item">
+            <div class="hq-circle">
+              <img src="Assets/logo_web.png" alt="Logo" />
+            </div>
+            <figcaption>Surabaya</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- MESSAGE US -->
+      <section id="message" class="message">
+        <h3 class="section-title">Message Us</h3>
+
+        <div class="message-wrap">
+          <form id="contactForm" class="form-panel" novalidate>
+            <label>Nama</label>
+            <input id="formName" type="text" placeholder="Nama" />
+
+            <label>Tanggal Lahir</label>
+            <input id="formDate" type="date" />
+
+            <label>Jenis Kelamin</label>
+            <div class="gender-row">
+              <label
+                ><input type="radio" name="gender" value="Laki-laki" />
+                Laki-Laki</label
+              >
+              <label
+                ><input type="radio" name="gender" value="Perempuan" />
+                Perempuan</label
+              >
+            </div>
+
+            <label>Pesan</label>
+            <input id="formMessage" type="text" placeholder="Pesan" />
+
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+
+          <aside class="preview-panel">
+            <div class="preview-meta">
+              Current time : <span id="currentTime"></span>
+              <br />
+              Real-Time Clock :
+              <span id="clock"></span>
+              <br />
+              Date :
+              <span id="fullDate"></span>
+              <br />
+              GMT :
+              <span id="gmtInfo"></span>
+            </div>
+
+            <pre id="previewBox" class="preview-box">
+Form preview akan tampil di sini setelah submit.</pre
+            >
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Created by Revou</div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

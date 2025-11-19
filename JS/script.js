@@ -30,7 +30,12 @@
       e.preventDefault();
 
       const name = document.getElementById("formName").value.trim();
-      const date = document.getElementById("formDate").value;
+      const dateInput = document.getElementById("formDate").value;
+      let date = "";
+      if (dateInput) {
+        const [year, month, day] = dateInput.split("-");
+        date = `${day}/${month}/${year}`;
+      }
       const genderEl = form.querySelector('input[name="gender"]:checked');
       const gender = genderEl ? genderEl.value : "";
       const message = document.getElementById("formMessage").value.trim();
